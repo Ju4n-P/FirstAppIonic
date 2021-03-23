@@ -13,8 +13,13 @@ const routes: Routes = [
   // {path: 'page3', component: Page3Component},
   // {path: 'page4', component: Page4Component},
 
-  {path: 'tabs', loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsModule)}
+  {path: 'tabs', loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsModule)},
 
+  {
+    path: '**',
+    redirectTo: 'tabs',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
